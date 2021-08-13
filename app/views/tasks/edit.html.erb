@@ -1,9 +1,13 @@
+<h1>Edit Task</h1>
+
 <%# SIMPLE FORMS METHOD %>
 <%= form_for @task do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.label :details %>
   <%= f.text_field :details %>
+  <%= f.check_box :completed %>
+  <%= f.label :completed, "Completed" %>
   <%= f.submit %>
 <% end %>
 
