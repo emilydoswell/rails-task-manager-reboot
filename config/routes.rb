@@ -9,12 +9,14 @@ Rails.application.routes.draw do
   # Read all the tasks
   get "/tasks", to: "tasks#index"
 
-  # Read one task
-  get "/tasks/:id", to: "tasks#show"
-
   # Create a task
+  # YOU MUST PUT THIS BEFORE read one task, because rails gets confused between 
+  # /tasks/:id and /tasks/new
   get "/tasks/new", to: "tasks#new" # Display the form
   post "/tasks", to: "tasks#create"
+
+  # Read one task
+  get "/tasks/:id", to: "tasks#show"
 
   # Update a task
   get "/tasks/:id/edit", to: "tasks#edit"
