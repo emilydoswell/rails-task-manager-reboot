@@ -1,1 +1,34 @@
-<form action=""></form>
+<%# action is /tasks because if you check the routes %>
+<%# post "/tasks", to: "tasks#create" %>
+<form action="/tasks" method="post">
+  <%# Title form %>
+  <label for="title">Title</label>
+  <input type="text" name="task[title]">
+  <%# Details form %>
+  <label for="details">Details</label>
+  <input type="text" name ="task[details]">
+   <label for=""></label>
+  <input type="text">
+  <%# Submit button %>
+  <input type="submit">
+</form>
+
+<%# The reason name="task[fieldname]" is because if we want to create a task.... %>
+
+<%# This is really long: %>
+<%# Task.create(title: params[:title], details: [:details]) %>
+
+<%# This is better: %>
+<%# Task.create(params[:task]) %>
+
+<%# So in our params we create a key 'task' and then the value is a hash with title, and details. %>
+
+<%# params = {
+      task: {
+        title: 'Make Bed',
+        details: 'Take the dirty linen off and put on new linen'
+      }
+    } %>
+
+<%# so...              Task.create(params[:task])  %>
+<%# is the same as ... Task.create(title: 'Make Bed', details: 'Take the dirty linen off and put on new linen') %>
