@@ -21,6 +21,9 @@ class TasksController < ApplicationController
     @task.save
     # Also today it doesn't matter if you do Task.new task.save or Task.create
     # Tomorrow we'll do validations, if save? ... do this else re render the form.
+
+    redirect_to task_path
+    # The prefix to the show page is task, so we redirect to the task_path which is the show page of all the tasks.
   end
 
   def edit
