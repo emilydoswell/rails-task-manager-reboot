@@ -5,4 +5,7 @@
 <%= link_to 'edit', edit_task_path(@task) %>
 
 <%# Need to specify that the method is delete otherwise its going to think you want the show page %>
-<%= link_to 'delete', task_path(@task), method: :delete %>
+<%= link_to 'delete', task_path(@task), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<%# <%= link_to 'delete', task_path(@task.id), method: :delete %>
+<%# You can use @task.id it's the same as @task %>
