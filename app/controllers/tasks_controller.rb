@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action: find_task, only: [:show, :edit, :update, :destroy]
+  # before_action: find_task, only: [:show, :edit, :update, :destroy]
   def index
     @tasks = Task.all
   end
@@ -57,8 +57,8 @@ class TasksController < ApplicationController
     params.require(:task).permit(:title, :details, :completed)
   end
 
-  def find_task
-  end
+  # def find_task
+  # end
 end
 
 # @task = Task.find(params[:id]) is repeated loads.
