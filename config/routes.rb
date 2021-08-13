@@ -16,12 +16,14 @@ Rails.application.routes.draw do
   post "/tasks", to: "tasks#create"
 
   # Read one task
-  get "/tasks/:id", to: "tasks#show"
+  get "/tasks/:id", to: "tasks#show", as: 'task'
 
   # Update a task
-  get "/tasks/:id/edit", to: "tasks#edit"
+  get "/tasks/:id/edit", to: "tasks#edit", as: 'edit_task'
   patch "/tasks/:id", to: "tasks#update"
 
   # Delete a task
   delete "/tasks/:id", to: "tasks#destroy"
 end
+
+# To change the prefix, especially today as you're not allowed to use resources :tasks, use as: 'task' on line 19.

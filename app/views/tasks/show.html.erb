@@ -1,2 +1,8 @@
 <h1><%= @task.title %></h1>
 <p><%= @task.details %></p>
+
+<%= link_to 'back', tasks_path %>
+<%= link_to 'edit', edit_task_path(@task) %>
+
+<%# Need to specify that the method is delete otherwise its going to think you want the show page %>
+<%= link_to 'delete', task_path(@task), method: :delete %>
