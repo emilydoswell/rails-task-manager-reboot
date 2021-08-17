@@ -12,7 +12,6 @@ class TasksController < ApplicationController
   def new
     # This creates an empty instance of Task
     @task = Task.new
-    # task
   end
 
   def create
