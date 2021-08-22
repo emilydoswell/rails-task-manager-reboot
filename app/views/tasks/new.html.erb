@@ -1,5 +1,5 @@
 <%# Form_for automatically generates your authenticity token for you %>
-<h1>New Task</h1>
+<h1 class="title">New Task</h1>
 
 <%# SIMPLE FORMS METHOD %>
 <%= form_for @task do |f| %>
@@ -16,25 +16,25 @@
 
 <%# action is /tasks because if you check the routes %>
 <%# post "/tasks", to: "tasks#create" %>
-<form action="/tasks" method="post">
+<%# <form action="/tasks" method="post"> %>
   <%# Inspect the form on browser and see that you get a super long token. The browser is going to match this token with the value in your session %>
   <%# If it matches that of your token, it will confirm that the form is being submitted from this website. %>
   <%# What's a form? Its a piece of information that goes from one page to another. %>
   <%# If I'm a hacker and I know my way around rails, I can go to my app and make a form that redirects to your form and push whatever data I want. %>
   <%# This token, I won't have access to it from your app so I won't be able to push something to your website. %>
   <%# Prevents CSRF attacks. google it. %>
-  <%= hidden_field_tag :Authenticity_token, form_authenticity_token %>
+  <%# <%= hidden_field_tag :Authenticity_token, form_authenticity_token %>
   <%# Title form %>
-  <label for="title">Title</label>
-  <input type="text" name="task[title]">
+  <%# <label for="title">Title</label> %>
+  <%# <input type="text" name="task[title]"> %>
   <%# Details form %>
-  <label for="details">Details</label>
+  <%# <label for="details">Details</label>
   <input type="text" name ="task[details]">
    <label for=""></label>
-  <input type="text">
+  <input type="text"> %>
   <%# Submit button %>
-  <input type="submit">
-</form>
+  <%# <input type="submit">
+</form> %>
 
 <%# The reason name="task[fieldname]" is because if we want to create a task.... %>
 
