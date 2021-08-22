@@ -1,5 +1,5 @@
-<h1><%= @task.title %></h1>
-<p><%= @task.details %></p>
+<h1 class="title"><%= @task.title %></h1>
+<p>Description: <%= @task.details %></p>
 <p>
   <% if !@task.completed %>
     This task is not completed yet
@@ -8,11 +8,11 @@
   <% end %>
 </p>
 
-<%= link_to 'back', tasks_path %>
-<%= link_to 'edit', edit_task_path(@task) %>
+<%= link_to 'Home', tasks_path %>
+<%= link_to 'Edit', edit_task_path(@task) %>
 
 <%# Need to specify that the method is delete otherwise its going to think you want the show page %>
-<%= link_to 'delete', task_path(@task), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Delete', task_path(@task), method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <%# <%= link_to 'delete', task_path(@task.id), method: :delete %>
 <%# You can use @task.id it's the same as @task %>

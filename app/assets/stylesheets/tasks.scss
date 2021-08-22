@@ -8,6 +8,18 @@ body {
 }
 
 .title {
-  text-decoration: underline;
+  // text-decoration: underline;
   margin: 2%;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+}
+
+.items {
+  text-align: left;
 }
